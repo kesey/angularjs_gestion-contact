@@ -29,10 +29,10 @@ app
 
         $scope.save = function (){
             if($scope.newContact.$invalid){ // newContact c'est le name du formulaire dans new.html
-                $scope.$broadcast('record:invalid');
+                $scope.$broadcast('record:invalid'); // on envoie 'record:invalid' dans les scopes descendants
             } else {
-                $scope.contact.$save();
-                $location.url('/contacts');
+                $scope.contact.$save(); // on sauvegarde l'objet contact
+                $location.url('/contacts'); // on redirige vers la liste des contacts
             }
         };
     });

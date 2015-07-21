@@ -1,4 +1,4 @@
-app
+angular.module('ContactsApp')
     .value('FieldTypes', {
         text: ['Text', 'should be text'],
         email: ['Email', 'should be an email address'],
@@ -23,7 +23,7 @@ app
                 live: '@',
                 required: '@'
             },
-            link: function ($scope, element, attr){ // cette fonction est exécutée à la création de la directive
+            link: function ($scope, element, attr){
                 $scope.$on('record:invalid', function(){
                     $scope[$scope.field].$setDirty();
                 });
@@ -46,7 +46,7 @@ app
                 var saveTimeout;
                 $scope.update = function(){
                     $timeout.cancel(saveTimeout);
-                    saveTimeout = $timeout($scope.blurUpdate, 1000); // $timeout retourne une promesse
+                    saveTimeout = $timeout($scope.blurUpdate, 1000);
                 };
             }
         }

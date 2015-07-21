@@ -1,4 +1,4 @@
-app
+angular.module('ContactsApp')
     .controller('ListController', function ($scope, Contact, $location){
         $scope.contacts = Contact.query();
         $scope.fields = ["firstName", "lastName"];

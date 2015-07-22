@@ -6,10 +6,6 @@ var express = require('express'),
     router = express.Router();
 
 router
-    .use(function (req, res, next) {
-        if (!req.user) req.user = {id: 1};
-        next(); // pour passer la requête aux fonctions suivantes
-    })
     .use(bodyParser.json())
     .route('/contact')
         .get(function (req, res) {

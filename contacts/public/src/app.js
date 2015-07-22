@@ -12,7 +12,10 @@ app.config(function($routeProvider, $locationProvider){
          })
          .when('/contact/:id', {
             controller: 'SingleController',
-             templateUrl: 'views/single.html'
+            templateUrl: 'views/single.html'
+         })
+         .otherwise({
+            redirectTo: '/contacts'
          });
     $locationProvider.html5Mode(true);
 });

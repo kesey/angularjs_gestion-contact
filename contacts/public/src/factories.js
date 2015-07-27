@@ -23,7 +23,7 @@ angular.module('ContactsApp')
             get: function(){
                 return $http.get(url);
             },
-            set: function(newFields){ // newFields => options.displayed_fields
+            set: function(newFields){ // newFields => options.displayed_fields (l'objet)
                 return $http.post(url, { fields: newFields });
             },
             headers: function(){

@@ -49,7 +49,7 @@ angular.module('ContactsApp')
     .controller('SettingsController', function($scope, $rootScope, options, Fields){
         $rootScope.PAGE = 'settings';
         $scope.allFields = [];
-        $scope.fields = options.displayed_fields;
+        $scope.fields = options.displayed_fields; // les champs que souhaite afficher un utilisateur x, ces options sont enregistrées dans users.json
         Fields.headers().then(function(data){
             $scope.allFields = data;
         })
